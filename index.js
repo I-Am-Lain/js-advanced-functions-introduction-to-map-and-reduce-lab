@@ -1,7 +1,7 @@
 // Your code here
 
 
-function mapToNegativize(a){
+function mapToNegativize(a){     // in all examples, i'm destructively doing it instead of pushing into new array
     for (let i = 0; i < a.length; i++){
         a[i] = a[i] * -1
     }
@@ -43,13 +43,10 @@ function reduceToAllTrue(a){
     return allTrue
 }
 
-function reduceToAnyTrue(a){
-    let anyTrue = false
-
+function reduceToAnyTrue(a){     // the faster way
     for (let b of a){
-        if (b == true){
-            anyTrue = true
-        }
+        if (b) return true
     }
-    return anyTrue
+
+    return false
 }
